@@ -12,14 +12,11 @@ public class sortArrTime {
         Stack<Integer> copy = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
             int finalI = i;
-            setTimeout(() -> toStack(arr[finalI], copy), arr[i]*100);
+            setTimeout(() -> copy.push(arr[finalI]), arr[i]*100);
         }
         setTimeout(() -> printSort(copy,arr), arr[1]*400);
     }
 
-    public static void toStack(int print,Stack<Integer> copy){
-        copy.push(print);
-    }
 
     public static void printSort (Stack<Integer> copy, int[] arr){
         for (int i = arr.length-1; i >=0 ; i--) {
